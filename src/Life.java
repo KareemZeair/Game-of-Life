@@ -51,53 +51,54 @@ public class Life {
         picture.show();
     }
 
-    private int[] findNeighbors(int v, int h, int gridSize)
+//    private int[] findNeighbors(int v, int h, int gridSize)
+//    {
+//        int[] neighborsArray;
+//        int prevVert = v - 1;
+//        int nextVert = v + 1;
+//        int prevHorizon = h - 1;
+//        int nextHorizon = h + 1;
+//
+//
+//        if (v-1 < 0)
+//        {
+//            prevVert = gridSize-1;
+//        }
+//        if (v+1 == gridSize)
+//        {
+//           nextVert = 0;
+//        }
+//        if (h-1 < 0)
+//        {
+//            prevHorizon = gridSize-1;
+//        }
+//        if (h+1 == gridSize)
+//        {
+//            nextHorizon = 0;
+//        }
+//
+//        neighborsArray = new int[]{currentCells[prevVert][nextHorizon], currentCells[prevVert][h], currentCells[prevVert][prevHorizon],
+//                                   currentCells[v][nextHorizon], currentCells[v][prevHorizon],
+//                                   currentCells[nextVert][nextHorizon], currentCells[nextVert][h], currentCells[nextVert][prevHorizon]};
+//
+//        return neighborsArray;
+//    }
+
+    public int numOfAliveNeighbors(int x, int y, int gridSize)
     {
-        int[] neighborsArray;
-        int prevVert = v - 1;
-        int nextVert = v + 1;
-        int prevHorizon = h - 1;
-        int nextHorizon = h + 1;
+        int aliveCell = 0;
 
-        if (v-1 < 0)
-        {
-            prevVert = gridSize-1;
-        }
-        if (v+1 == gridSize)
-        {
-           nextVert = 0;
-        }
-        if (h-1 < 0)
-        {
-            prevHorizon = gridSize-1;
-        }
-        if (h+1 == gridSize)
-        {
-            nextHorizon = 0;
-        }
-
-        neighborsArray = new int[]{currentCells[prevVert][nextHorizon], currentCells[prevVert][h], currentCells[prevVert][prevHorizon],
-                                   currentCells[v][nextHorizon], currentCells[v][prevHorizon],
-                                   currentCells[nextVert][nextHorizon], currentCells[nextVert][h], currentCells[nextVert][prevHorizon]};
-
-        return neighborsArray;
-    }
-
-    public int numOfAliveNeighbors(int[] neighborsArray)
-    {
-        int alive = 0;
-        for (int j = 0; j < neighborsArray.length; j++)
-        {
-            if (neighborsArray[j] == 1)
-            {
-                alive = alive+1;
+        for (int i = -1; i <= 1; i++) {
+            for (int j = -1; j <= 1; j++) {
+                aliveCell += currentCells[(i+x+gridSize)%gridSize][(j+y+gridSize)%gridSize];
             }
         }
-        return alive;
+        aliveCell -= currentCells[x][y];
+        return aliveCell;
     }
 
     private void judge(int v, int h) {
-        int aliveNeighbors = numOfAliveNeighbors(findNeighbors(v, h, gridSize)); //in previous cells array
+        int aliveNeighbors = numOfAliveNeighbors(v, h, gridSize); //in previous cells array
         if (currentCells[v][h] == 1 && aliveNeighbors < 2)
         {
             nextArray[v][h] = 0;
@@ -288,9 +289,7 @@ public class Life {
 
         for (int x = 0; x < numIterations; x++)
         {
-            Thread.sleep(1000);
-            System.out.println(Arrays.deepToString(life.currentCells));
-            System.out.println("HONA SA2ASKOT QALEELAN------------");
+            Thread.sleep(100);
 
             for (int i = 0; i < gridSize; i++)      //i is horizontal & j is vertical cell indexes technically
             {
