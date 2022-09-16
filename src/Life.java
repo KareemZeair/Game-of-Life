@@ -1,32 +1,24 @@
 import java.awt.*;
-import java.util.Arrays;
 import java.util.Objects;
 
 public class Life {
-
-    private int iterations;
     public static int gridSize;
     private int pixelWidth = 20;
     private int[][] currentCells;
     private int[][] nextArray;
 
-    private String pattern;
     private static Picture picture;
 
     private static Color white = new Color(255, 255, 255);
     private static Color black = new Color(0, 0, 0);
 
-
     private Life(int iterations, int gridSize, String pattern)
     {
-        this.iterations = iterations;
         this.gridSize = gridSize;
-        this.pattern = pattern;
 
         picture = new Picture(pixelWidth*gridSize, pixelWidth*gridSize);
         currentCells = new int[gridSize][gridSize];
         nextArray = new int[gridSize][gridSize];
-
     }
 
     private void drawCell(int i, int j, Color col)
@@ -51,46 +43,13 @@ public class Life {
         picture.show();
     }
 
-//    private int[] findNeighbors(int v, int h, int gridSize)
-//    {
-//        int[] neighborsArray;
-//        int prevVert = v - 1;
-//        int nextVert = v + 1;
-//        int prevHorizon = h - 1;
-//        int nextHorizon = h + 1;
-//
-//
-//        if (v-1 < 0)
-//        {
-//            prevVert = gridSize-1;
-//        }
-//        if (v+1 == gridSize)
-//        {
-//           nextVert = 0;
-//        }
-//        if (h-1 < 0)
-//        {
-//            prevHorizon = gridSize-1;
-//        }
-//        if (h+1 == gridSize)
-//        {
-//            nextHorizon = 0;
-//        }
-//
-//        neighborsArray = new int[]{currentCells[prevVert][nextHorizon], currentCells[prevVert][h], currentCells[prevVert][prevHorizon],
-//                                   currentCells[v][nextHorizon], currentCells[v][prevHorizon],
-//                                   currentCells[nextVert][nextHorizon], currentCells[nextVert][h], currentCells[nextVert][prevHorizon]};
-//
-//        return neighborsArray;
-//    }
-
     public int numOfAliveNeighbors(int x, int y, int gridSize)
     {
         int aliveCell = 0;
 
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
-                aliveCell += currentCells[(i+x+gridSize)%gridSize][(j+y+gridSize)%gridSize];
+                aliveCell += currentCells[(i + x + gridSize) % gridSize][(j + y + gridSize) % gridSize];
             }
         }
         aliveCell -= currentCells[x][y];
@@ -312,9 +271,5 @@ public class Life {
             life.show();
             life.nextArray = new int[gridSize][gridSize];
         }
-
-
     }
-
-
 }
