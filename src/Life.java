@@ -3,7 +3,7 @@ import java.util.Objects;
 
 public class Life {
     public static int gridSize;
-    private int pixelWidth = 20;
+    private int pixelWidth = 10;
     private int[][] currentCells;
     private int[][] nextArray;
 
@@ -134,99 +134,75 @@ public class Life {
         }
         else if (Objects.equals(p, "S"))
         {
-            life.drawCell(origin+3, origin-3, black);
-            life.currentCells[origin-3][origin+3] = 1;
-
-            life.drawCell(origin+3, origin-4, black);
-            life.currentCells[origin-4][origin+3] = 1;
-
+            life.drawCell(origin+2, origin-3, black);
+            life.currentCells[origin-3][origin+2] = 1;
+            life.drawCell(origin+2, origin-4, black);
+            life.currentCells[origin-4][origin+2] = 1;
+            life.drawCell(origin+2, origin-5, black);
+            life.currentCells[origin-5][origin+2] = 1;
             life.drawCell(origin+3, origin-5, black);
             life.currentCells[origin-5][origin+3] = 1;
-
             life.drawCell(origin+4, origin-5, black);
             life.currentCells[origin-5][origin+4] = 1;
-
-            life.drawCell(origin+5, origin-5, black);
-            life.currentCells[origin-5][origin+5] = 1;
-
-            life.drawCell(origin+5, origin-6, black);
-            life.currentCells[origin-6][origin+5] = 1;
-
-            life.drawCell(origin+5, origin-4, black);
-            life.currentCells[origin-4][origin+5] = 1;
-
-            life.drawCell(origin-7, origin-6, black);
-            life.currentCells[origin-6][origin-7] = 1;
-
-            life.drawCell(origin-7, origin-7, black);
-            life.currentCells[origin-7][origin-7] = 1;
+            life.drawCell(origin+4, origin-6, black);
+            life.currentCells[origin-6][origin+4] = 1;
+            life.drawCell(origin+4, origin-4, black);
+            life.currentCells[origin-4][origin+4] = 1;
 
             life.drawCell(origin-8, origin-6, black);
             life.currentCells[origin-6][origin-8] = 1;
+            life.drawCell(origin-8, origin-5, black);
+            life.currentCells[origin-5][origin-8] = 1;
+            life.drawCell(origin-9, origin-6, black);
+            life.currentCells[origin-6][origin-9] = 1;
+            life.drawCell(origin-9, origin-5, black);
+            life.currentCells[origin-5][origin-9] = 1;
 
-            life.drawCell(origin-8, origin-7, black);
-            life.currentCells[origin-7][origin-8] = 1;
-
-
-            life.drawCell(origin-14, origin-6, black);
-            life.currentCells[origin-6][origin-14] = 1;
-
-            life.drawCell(origin-14, origin-7, black);
-            life.currentCells[origin-7][origin-14] = 1;
-
-            life.drawCell(origin-15, origin-6, black);
-            life.currentCells[origin-6][origin-15] = 1;
-
-            life.drawCell(origin-15, origin-7, black);
-            life.currentCells[origin-7][origin-15] = 1;
-
-            life.drawCell(origin-10, origin-2, black);
-            life.currentCells[origin-2][origin-10] = 1;
-
-            life.drawCell(origin-10, origin-3, black);
-            life.currentCells[origin-3][origin-10] = 1;
 
             life.drawCell(origin-11, origin-2, black);
             life.currentCells[origin-2][origin-11] = 1;
-
             life.drawCell(origin-11, origin-3, black);
             life.currentCells[origin-3][origin-11] = 1;
+            life.drawCell(origin-12, origin-2, black);
+            life.currentCells[origin-2][origin-12] = 1;
+            life.drawCell(origin-12, origin-3, black);
+            life.currentCells[origin-3][origin-12] = 1;
 
-            life.drawCell(origin+12, origin+1, black);
-            life.currentCells[origin+1][origin+12] = 1;
+            life.drawCell(origin-15, origin-5, black);
+            life.currentCells[origin-5][origin-15] = 1;
+            life.drawCell(origin-15, origin-6, black);
+            life.currentCells[origin-6][origin-15] = 1;
+            life.drawCell(origin-16, origin-5, black);
+            life.currentCells[origin-5][origin-16] = 1;
+            life.drawCell(origin-16, origin-6, black);
+            life.currentCells[origin-6][origin-16] = 1;
 
-            life.drawCell(origin+12, origin+2, black);
-            life.currentCells[origin+2][origin+12] = 1;
-
-            life.drawCell(origin+13, origin+1, black);
-            life.currentCells[origin+1][origin+13] = 1;
-
-            life.drawCell(origin+13, origin+2, black);
-            life.currentCells[origin+2][origin+13] = 1;
-
-            life.drawCell(origin+10, origin+5, black);
-            life.currentCells[origin+5][origin+10] = 1;
-
-            life.drawCell(origin+10, origin+4, black);
-            life.currentCells[origin+4][origin+10] = 1;
-
+            life.drawCell(origin+8, origin+5, black);
+            life.currentCells[origin+5][origin+8] = 1;
+            life.drawCell(origin+8, origin+6, black);
+            life.currentCells[origin+6][origin+8] = 1;
             life.drawCell(origin+9, origin+5, black);
             life.currentCells[origin+5][origin+9] = 1;
+            life.drawCell(origin+9, origin+6, black);
+            life.currentCells[origin+6][origin+9] = 1;
 
-            life.drawCell(origin+9, origin+4, black);
-            life.currentCells[origin+4][origin+9] = 1;
+            life.drawCell(origin+11, origin+2, black);
+            life.currentCells[origin+2][origin+11] = 1;
+            life.drawCell(origin+11, origin+3, black);
+            life.currentCells[origin+3][origin+11] = 1;
+            life.drawCell(origin+12, origin+2, black);
+            life.currentCells[origin+2][origin+12] = 1;
+            life.drawCell(origin+12, origin+3, black);
+            life.currentCells[origin+3][origin+12] = 1;
 
+            life.drawCell(origin+15, origin+5, black);
+            life.currentCells[origin+5][origin+15] = 1;
+            life.drawCell(origin+15, origin+6, black);
+            life.currentCells[origin+6][origin+15] = 1;
             life.drawCell(origin+16, origin+5, black);
             life.currentCells[origin+5][origin+16] = 1;
-
-            life.drawCell(origin+16, origin+4, black);
-            life.currentCells[origin+4][origin+16] = 1;
-
-            life.drawCell(origin+17, origin+5, black);
-            life.currentCells[origin+5][origin+17] = 1;
-
-            life.drawCell(origin+17, origin+4, black);
-            life.currentCells[origin+4][origin+17] = 1;
+            life.drawCell(origin+16, origin+6, black);
+            life.currentCells[origin+6][origin+16] = 1;
         }
         else if (Objects.equals(p, "R"))
         {
@@ -248,7 +224,7 @@ public class Life {
 
         for (int x = 0; x < numIterations; x++)
         {
-            Thread.sleep(100);
+            Thread.sleep(20);
 
             for (int i = 0; i < gridSize; i++)      //i is horizontal & j is vertical cell indexes technically
             {
