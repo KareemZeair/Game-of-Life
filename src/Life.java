@@ -3,7 +3,7 @@ import java.util.Objects;
 
 public class Life {
     public static int gridSize;
-    private int pixelWidth = 10;
+    private int pixelWidth = 15;
     private int[][] currentCells;
     private int[][] nextArray;
 
@@ -224,7 +224,7 @@ public class Life {
 
         for (int x = 0; x < numIterations; x++)
         {
-            Thread.sleep(20);
+            Thread.sleep(650);
 
             for (int i = 0; i < gridSize; i++)      //i is horizontal & j is vertical cell indexes technically
             {
