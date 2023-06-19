@@ -3,6 +3,7 @@
 ## Date: September 19, 2022
 **This repository is my assignment solution for a school course.**
 
+- Open a terminal in the project directory.
 - To compile and run the Game of Life program, run `javac *.java` to compile the program and create class files.
 
 - Run the following instruction with these arguments:
